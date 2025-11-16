@@ -36,7 +36,17 @@ class MenuState extends GameState
         }
 
         if (controls.justPressed.accept) {
-            FlxG.switchState(PlayState.new);
+            // FlxG.switchState(PlayState.new);
+        
+            switch (menuItem[menuSelected])
+            {
+                case "Start":
+                    FlxG.switchState(PlayState.new);
+                case "Options":
+                    
+                case "Exit":
+
+            }
         }
     }
 
