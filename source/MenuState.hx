@@ -36,8 +36,6 @@ class MenuState extends GameState
         }
 
         if (controls.justPressed.accept) {
-            // FlxG.switchState(PlayState.new);
-        
             switch (menuItem[menuSelected])
             {
                 case "Start":
@@ -45,7 +43,7 @@ class MenuState extends GameState
                 case "Options":
                     
                 case "Exit":
-
+                    Sys.exit(0);
             }
         }
     }

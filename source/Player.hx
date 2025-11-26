@@ -11,6 +11,9 @@ class Player extends FlxSprite
         animation.add("idle", [0]);
         animation.add("run", [1, 2], 30, false);
         animation.play("idle");
+
+        setGraphicSize(64, 64);
+        updateHitbox();
     }
 
     override function update(elapsed:Float) {
