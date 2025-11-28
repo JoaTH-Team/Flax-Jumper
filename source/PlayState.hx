@@ -50,7 +50,7 @@ class PlayState extends GameState
 		tilemap.setTileProperties(2, ANY);
 		add(tilemap);
 
-		tilemap.loadEntities(loadEntity, "entity");
+		map.loadEntities(loadEntity, "entity");
 	}
 
 	function loadEntity(entity:EntityData) {
