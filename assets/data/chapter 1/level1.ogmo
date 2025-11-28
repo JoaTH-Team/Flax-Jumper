@@ -1,0 +1,115 @@
+{
+  "name": "Level 1",
+  "ogmoVersion": "3.4.0",
+  "levelPaths": ["."],
+  "backgroundColor": "#282c34ff",
+  "gridColor": "#3c4049cc",
+  "anglesRadians": true,
+  "directoryDepth": 5,
+  "layerGridDefaultSize": {"x": 32, "y": 32},
+  "levelDefaultSize": {"x": 320, "y": 240},
+  "levelMinSize": {"x": 512, "y": 512},
+  "levelMaxSize": {"x": 4096, "y": 4096},
+  "levelValues": [],
+  "defaultExportMode": ".json",
+  "compactExport": false,
+  "externalScript": "",
+  "playCommand": "",
+  "entityTags": [],
+  "layers": [
+    {
+      "definition": "entity",
+      "name": "entity",
+      "gridSize": {"x": 32, "y": 32},
+      "exportID": "34035560",
+      "requiredTags": [],
+      "excludedTags": []
+    },
+    {
+      "definition": "tile",
+      "name": "tilemap",
+      "gridSize": {"x": 32, "y": 32},
+      "exportID": "34036348",
+      "exportMode": 0,
+      "arrayMode": 0,
+      "defaultTileset": "Grass Block"
+    }
+  ],
+  "entities": [
+    {
+      "exportID": "34031011",
+      "name": "player",
+      "limit": -1,
+      "size": {"x": 32, "y": 32},
+      "origin": {"x": 0, "y": 0},
+      "originAnchored": true,
+      "shape": {
+        "label": "Rectangle",
+        "points": [
+          {"x": -1, "y": -1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": 1}
+        ]
+      },
+      "color": "#ff0000ff",
+      "tileX": false,
+      "tileY": false,
+      "tileSize": {"x": 32, "y": 32},
+      "resizeableX": false,
+      "resizeableY": false,
+      "rotatable": false,
+      "rotationDegrees": 360,
+      "canFlipX": false,
+      "canFlipY": false,
+      "canSetColor": false,
+      "hasNodes": false,
+      "nodeLimit": 0,
+      "nodeDisplay": 0,
+      "nodeGhost": true,
+      "tags": [],
+      "values": []
+    },
+    {
+      "exportID": "34036417",
+      "name": "hole event 1",
+      "limit": -1,
+      "size": {"x": 32, "y": 32},
+      "origin": {"x": 0, "y": 0},
+      "originAnchored": true,
+      "shape": {
+        "label": "Rectangle",
+        "points": [
+          {"x": -1, "y": -1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": 1}
+        ]
+      },
+      "color": "#d6ff00ff",
+      "tileX": false,
+      "tileY": false,
+      "tileSize": {"x": 16, "y": 16},
+      "resizeableX": false,
+      "resizeableY": false,
+      "rotatable": false,
+      "rotationDegrees": 360,
+      "canFlipX": false,
+      "canFlipY": false,
+      "canSetColor": false,
+      "hasNodes": false,
+      "nodeLimit": 0,
+      "nodeDisplay": 0,
+      "nodeGhost": true,
+      "tags": [],
+      "values": []
+    }
+  ],
+  "tilesets": [
+    {"label": "Grass Block", "path": "grassblock.png", "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAAAgCAYAAACVf3P1AAAAAXNSR0IArs4c6QAAAMxJREFUeJzt3LENgzAABdHviIHSp2MIhkjHJOkYwkOko2cjUiRFahzlkHxvAL6FrqCwKHnbwyju971fkuz35xVZX8YtSXJ0fxm3PKbb4f25rknS9IwWv9if69r0/lr3W8x1zQVZlj4MUCgDFMoAhTJAoQxQKAMUygCFMkChDFAoAxTKAIUyQKGGfN2KkP5tyAmuI9HOco4eDfQBzoC+D9kzvwGFMkChDFAoAxTKAIUyQKEMUCgDFMoAhTJAoQxQKAMUygCFwn/P5X7f+y9R/SnLTPjkUgAAAABJRU5ErkJggg==", "tileWidth": 32, "tileHeight": 32, "tileSeparationX": 0, "tileSeparationY": 0, "tileMarginX": 0, "tileMarginY": 0}
+  ]
+}

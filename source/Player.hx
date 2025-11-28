@@ -8,15 +8,22 @@ class Player extends FlxSprite
         super(x, y);
     
         loadGraphic(AssetPaths.player__png, true, 32, 32);
-        animation.add("idle", [0]);
-        animation.add("run", [1, 2], 30, false);
-        animation.play("idle");
+        quickAdd("idle", [0]);
+        quickAdd("walk", [1, 2, 3, 4, 5, 6]);
+        quickAdd("jump_1", [1, 7]);
+        quickAdd("jump_2", [7, 8]);
+        quickAdd("dead", [9]);
 
-        setGraphicSize(64, 64);
+        playAnim("idle");
+
         updateHitbox();
     }
 
-    override function update(elapsed:Float) {
-        super.update(elapsed);
-	}
+    function quickAdd(name:String, amin:Array<Int>, fps:Int = 24) {
+        animation.add(name, amin, fps, false);
+    }
+
+    public function playAnim(name:String, force:Bool = false) {
+        animation.play(name, force);
+    }
 }
