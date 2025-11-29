@@ -1,5 +1,6 @@
 package;
 
+import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.FlxSprite;
 import level.*;
 import flixel.util.FlxColor;
@@ -20,6 +21,7 @@ class PlayState extends GameState
 	public var player:Player;
 	public var flagWin:FlxSprite;
 	public var levelHandle:LevelBase;
+	public var coins:FlxTypedGroup<Coin>;
 
 	var canDash:Bool = false;
 	var isDashing:Bool = false;
@@ -42,6 +44,9 @@ class PlayState extends GameState
 		flagWin.animation.add("idle", [0, 1, 2, 3, 4, 5, 4, 3, 2, 1], 12, true);
 		flagWin.animation.play("idle");
 		add(flagWin);
+
+		coins = new FlxTypedGroup<Coin>();
+		add(coins);
 
 		switch (levelName)
 		{

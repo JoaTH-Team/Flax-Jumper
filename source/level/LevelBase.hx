@@ -1,5 +1,6 @@
 package level;
 
+import flixel.FlxSprite;
 import flixel.FlxG;
 import flixel.addons.editors.ogmo.FlxOgmo3Loader;
 import flixel.tile.FlxTilemap;
@@ -43,6 +44,8 @@ class LevelBase extends FlxSpriteGroup
                 game.player.setPosition(entity.x, entity.y);
             case "flag win":
                 game.flagWin.setPosition(entity.x, entity.y);
+            case "coin":
+                game.coins.add(new Coin(entity.x + 8, entity.y + 8));
         }
     }
 
@@ -54,6 +57,12 @@ class LevelBase extends FlxSpriteGroup
         overlapWith(game.player, game.flagWin, function () {
             trace("Hooray you win, strike!");
             FlxG.resetState();
+        });
+        FlxG.overlap(game.player, game.coins, function (player:FlxSprite, coin:Coin) {
+            if (player.alive && player.exists && coin.alive && coin.exists)
+            {
+                coin.kill();
+            }
         });
     }
 
