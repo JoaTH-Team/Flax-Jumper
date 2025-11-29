@@ -1,5 +1,7 @@
 package;
 
+import flixel.FlxSprite;
+import level.*;
 import flixel.util.FlxColor;
 import flixel.FlxG;
 import flixel.tile.FlxTilemap;
@@ -8,10 +10,16 @@ import flixel.FlxObject;
 
 class PlayState extends GameState
 {
-	var player:Player;
+	public static var instance:PlayState = null;
+	public function new() {
+		super();
+		instance = this;
+	}
 
-	var map:FlxOgmo3Loader;
-	var tilemap:FlxTilemap;
+	public var levelName:String = "level1";
+	public var player:Player;
+	public var flagWin:FlxSprite;
+	public var levelHandle:LevelBase;
 
 	var canDash:Bool = false;
 	var isDashing:Bool = false;
@@ -25,14 +33,22 @@ class PlayState extends GameState
 	{
 		super.create();
 
-		bgColor = FlxColor.fromString("0x00AAFF");
-
 		player = new Player(0, 0);
 		player.acceleration.y = 900;
 		player.maxVelocity.y = 300;
 		add(player);
 
-		loadTilemap();
+		flagWin = new FlxSprite(0, 0).loadGraphic(AssetPaths.flag_win__png, true, 32, 32);
+		flagWin.animation.add("idle", [0, 1, 2, 3, 4, 5, 4, 3, 2, 1], 12, true);
+		flagWin.animation.play("idle");
+		add(flagWin);
+
+		switch (levelName)
+		{
+			case "level1":
+				levelHandle = new Level1();
+		}
+
 		FlxG.camera.zoom = 1.15;
 		FlxG.camera.follow(player, PLATFORMER, 0.05);
 	}
@@ -41,7 +57,7 @@ class PlayState extends GameState
 	{
 		super.update(elapsed);
 
-		FlxG.collide(tilemap, player);
+		levelHandle.update(elapsed);
 		handleInput();
 		updateDash(elapsed);
 
@@ -70,6 +86,7 @@ class PlayState extends GameState
 				canDash = true;
 				justJumped = true;
 				player.playAnim("jump_1");
+				FlxG.sound.play(AssetPaths.jump__wav);
 			}
 		}
 
@@ -128,41 +145,9 @@ class PlayState extends GameState
 		}
 	}
 
-	function loadTilemap(name:String = "level1") {
-		map = new FlxOgmo3Loader('assets/data/chapter 1/$name.ogmo', 'assets/data/chapter 1/$name.json');
-		tilemap = map.loadTilemap('assets/images/tilemap/grassblock.png', "tilemap");
-		tilemap.follow();
-
-		tilemap.setTileProperties(1, ANY);
-		for (i in 2...5) {
-			tilemap.setTileProperties(i, NONE);
-		}
-		
-		tilemap.immovable = true;
-		add(tilemap);
-
-		map.loadEntities(loadEntity, "entity");
-	}
-
-	function loadEntity(entity:EntityData) {
-		switch (entity.name) {
-			case "player":
-				player.setPosition(entity.x, entity.y);
-			case "hole event 1":
-		}
-	}
-
 	function gameOver():Void {
 		trace("oh no you just dead from falling");
 		player.playAnim("dead");
 		FlxG.resetState();
-	}
-
-	function overlapWith(obj1:FlxObject, obj2:FlxObject, doSomething:Dynamic) {
-		if (obj1 != null && obj2 != null) {
-			if (obj1.overlaps(obj2)) {
-				doSomething();
-			}
-		}
 	}
 }
