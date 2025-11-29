@@ -110,6 +110,6 @@
     }
   ],
   "tilesets": [
-    {"label": "Grass Block", "path": "grassblock.png", "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAAAgCAYAAACVf3P1AAAAAXNSR0IArs4c6QAAAMxJREFUeJzt3LENgzAABdHviIHSp2MIhkjHJOkYwkOko2cjUiRFahzlkHxvAL6FrqCwKHnbwyju971fkuz35xVZX8YtSXJ0fxm3PKbb4f25rknS9IwWv9if69r0/lr3W8x1zQVZlj4MUCgDFMoAhTJAoQxQKAMUygCFMkChDFAoAxTKAIUyQKGGfN2KkP5tyAmuI9HOco4eDfQBzoC+D9kzvwGFMkChDFAoAxTKAIUyQKEMUCgDFMoAhTJAoQxQKAMUygCFwn/P5X7f+y9R/SnLTPjkUgAAAABJRU5ErkJggg==", "tileWidth": 32, "tileHeight": 32, "tileSeparationX": 0, "tileSeparationY": 0, "tileMarginX": 0, "tileMarginY": 0}
+    {"label": "Grass Block", "path": "../../images/tilemap/grassblock.png", "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAYAAABEmHeFAAAAAXNSR0IArs4c6QAAANtJREFUeJzt3LENglAYReGLcSB7O4ZwCDsmsWMIhrCjZyNsLQ1P/V9yzlcTLiE5BQkwpA970e7gPnt/+OCgX9vvz0vJ8DxuSZKj+/O45XG7Ht6fljVJms7R4hv707I23b/W/RbTsuZUsix1wgCEZgBCMwChGYDQDEBoBiA0AxCaAQjNAIRmAEIzAKEZgNDO1ReQt7cCpX/rIoDq14Gr9XIdRF0EQFf9PQSZzwBCMwChGYDQDEBoBiA0AxCaAQjNAIRmAEIzAKEZgNAMQGgGILQe/g4d8u+53a/dfwHfHSnLBLrNKAAAAABJRU5ErkJggg==", "tileWidth": 32, "tileHeight": 32, "tileSeparationX": 0, "tileSeparationY": 0, "tileMarginX": 0, "tileMarginY": 0}
   ]
 }

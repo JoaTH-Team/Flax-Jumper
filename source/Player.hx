@@ -19,7 +19,7 @@ class Player extends FlxSprite
         updateHitbox();
     }
 
-    function quickAdd(name:String, amin:Array<Int>, fps:Int = 24) {
+    function quickAdd(name:String, amin:Array<Int>, fps:Int = 12) {
         animation.add(name, amin, fps, false);
     }
 

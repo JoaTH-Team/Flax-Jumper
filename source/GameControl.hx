@@ -6,9 +6,9 @@ import flixel.addons.input.FlxControls;
 enum GameAction {
     // game control
     left;
-    down;
-    up;
     right;
+    up;
+    dash;
 
     // menu control
     ui_left;
@@ -25,9 +25,9 @@ class GameControl extends FlxControls<GameAction> {
     function getDefaultMappings():ActionMap<GameAction> {
         return [
             GameAction.left => [getFromString("LEFT")],
-            GameAction.down => [getFromString("DOWN")],
-            GameAction.up => [getFromString("UP")],
             GameAction.right => [getFromString("RIGHT")],
+            GameAction.up => [getFromString("UP")],
+            GameAction.dash => [getFromString("SPACE")],
             GameAction.ui_left => [getFromString("LEFT")],
             GameAction.ui_down => [getFromString("DOWN")],
             GameAction.ui_up => [getFromString("UP")],
